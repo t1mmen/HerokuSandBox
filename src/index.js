@@ -10,7 +10,6 @@ import PostsIndex from "./components/PostsIndex";
 import PostsNew from "./components/PostsNew";
 import PostsShow from "./components/PostsShow";
 import registerServiceWorker from "../registerServiceWorker";
-
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(

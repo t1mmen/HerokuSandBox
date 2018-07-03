@@ -1,6 +1,10 @@
 {
   "name": "php-free",
   "version": "0.1.0",
+  "engines": {
+    "node": "9.4.0",
+    "npm": "5.7.1"
+  },
   "private": true,
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",

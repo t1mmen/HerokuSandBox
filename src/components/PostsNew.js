@@ -38,11 +38,11 @@ class PostsNew extends Component {
         <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           {/* These field names are not arbitrary, they are necessary for built in validation function */}
           <Field label="Title" name="title" component={this.renderField} />
-          {/* <Field
+          <Field
             label="Categories"
             name="categories"
             component={this.renderField}
-          /> */}
+          />
           <Field
             label="Post Content"
             name="content"

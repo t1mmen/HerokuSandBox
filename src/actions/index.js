@@ -5,11 +5,12 @@ export const FETCH_POST = "FETCH_POST";
 export const CREATE_POST = "CREATE_POST";
 export const DELETE_POST = "DELETE_POST";
 
-const ROOT_URL = "http://reduxblog.herokuapp.com/api";
-const API_KEY = "?key=OperationSnakeEater";
+const ROOT_URL = "https://youfoundnate.com/wolfcircus/wp-json/wp/v2";
+const EMBED_KEY = "?_embed";
+// axios.get(`${ROOT_URL}/posts${EMBED_KEY}`);
 
 export function fetchPosts() {
-  const request = axios.get(`${ROOT_URL}/posts/${API_KEY}`);
+  const request = axios.get(`${ROOT_URL}/posts/`);
   console.log(request);
   return {
     type: FETCH_POSTS,
@@ -19,7 +20,7 @@ export function fetchPosts() {
 
 export function createPost(values, callback) {
   const request = axios
-    .post(`${ROOT_URL}/posts${API_KEY}`, values)
+    .post(`${ROOT_URL}/posts`, values)
     // this callback handles the race condition that is created when the post is submitted and the user is navigated back to the index page.
     .then(() => callback());
 
@@ -30,7 +31,8 @@ export function createPost(values, callback) {
 }
 
 export function fetchPost(id) {
-  const request = axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`);
+  // const request = axios.get(`${ROOT_URL}/posts/${id}${EMBED_KEY}`);
+  const request = axios.get(`${ROOT_URL}/posts/${id}`);
   return {
     type: FETCH_POST,
     payload: request
@@ -39,7 +41,7 @@ export function fetchPost(id) {
 
 export function deletePost(id, callback) {
   const request = axios
-    .delete(`${ROOT_URL}/posts/${id}${API_KEY}`)
+    .delete(`${ROOT_URL}/posts/${id}`)
     .then(() => callback());
   return {
     type: DELETE_POST,

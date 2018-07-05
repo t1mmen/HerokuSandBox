@@ -13,4 +13,9 @@ form a {
 
 .link {
   font-size: 11px;
+  font-style: italic;
+}
+
+.title {
+  color: #000 !important;
 }

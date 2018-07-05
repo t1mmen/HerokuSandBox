@@ -20,7 +20,9 @@ class PostsIndex extends Component {
       // );
       return (
         <li key={post.id} className="list-group-item">
-          <Link to={`/posts/${post.id}`}>{post.title.rendered}</Link>
+          <Link className="title" to={`/posts/${post.id}`}>
+            {post.title.rendered}
+          </Link>
           <div>
             <a className="link" href={post.link} target="_blank">
               ...on wordpress

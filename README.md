@@ -1,23 +1,6 @@
-# React-Redux Blog
+# PHP-Free Blog
 
-### Getting Started
-
-There are two methods for getting started with this repo.
-
-#### Familiar with Git?
-
-Checkout this repo, install dependencies, then start the gulp process with the following:
-
-```
-> git clone https://github.com/NCMoseley/React-Redux-Blog.git
-> cd into directory
-> npm install
-> npm start
-```
-
-#### Not Familiar with Git?
-
-Click [here](https://github.com/NCMoseley/React-Redux-Blog.git) then download the .zip file. Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+USE package.lock not yarn.lock in case of conflict
 
 ```
 > npm install

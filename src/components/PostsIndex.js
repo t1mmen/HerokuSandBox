@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchPosts } from "../actions";
+// import { fetchAuthors } from "../actions";
 import _ from "lodash";
 
 class PostsIndex extends Component {
@@ -9,14 +10,22 @@ class PostsIndex extends Component {
   // This is a lifecycle method built into React and will be called automatically if it is defined as below
   componentDidMount() {
     this.props.fetchPosts();
+    // this.props.fetchAuthors();
   }
 
   renderPosts() {
     return _.map(this.props.posts, post => {
+      // const eachAuthor = this.props.authors.find(
+      //   d => d.id === post.data[0].author
+      // );
       return (
         <li key={post.id} className="list-group-item">
           <Link to={`/posts/${post.id}`}>{post.title.rendered}</Link>
-          {console.log(post)}
+          <div>
+            <a className="link" href={post.link} target="_blank">
+              ...on wordpress
+            </a>
+          </div>
         </li>
       );
     });

@@ -4,10 +4,21 @@ export const FETCH_POSTS = "FETCH_POSTS";
 export const FETCH_POST = "FETCH_POST";
 export const CREATE_POST = "CREATE_POST";
 export const DELETE_POST = "DELETE_POST";
+// export const FETCH_AUTHORS = "FETCH_AUTHORS";
 
 const ROOT_URL = "https://youfoundnate.com/wolfcircus/wp-json/wp/v2";
-const EMBED_KEY = "?_embed";
-// axios.get(`${ROOT_URL}/posts${EMBED_KEY}`);
+// const AUTHOR_URL =
+//   "https://youfoundnate.com/wolfcircus/wp-json/wp/v2/users/?_embed";
+
+// export function fetchAuthors() {
+//   const request = axios.get(`${AUTHOR_URL}`);
+//   console.log(request);
+//   return dispatch => {
+//     request.then(({ authors }) => {
+//       dispatch({ type: "FETCH_AUTHORS", payload: authors });
+//     });
+//   };
+// }
 
 export function fetchPosts() {
   const request = axios.get(`${ROOT_URL}/posts/`);

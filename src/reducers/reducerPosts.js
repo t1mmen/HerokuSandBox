@@ -2,10 +2,11 @@ import _ from "lodash";
 import {
   FETCH_POSTS,
   FETCH_POST,
-  DELETE_POST
+  DELETE_POST,
+  SELECT_POST,
+  DESELECT_POST
   // FETCH_AUTHORS
 } from "../actions";
-// import { CREATE_POST } from "../actions/";
 
 export default function(state = {}, action) {
   switch (action.type) {
@@ -22,6 +23,10 @@ export default function(state = {}, action) {
     //   return action.payload.authors;
     case FETCH_POSTS:
       return _.mapKeys(action.payload.data, "id");
+    case SELECT_POST:
+      return [...state, action.payload];
+    case DESELECT_POST:
+      return _.without(state, action.payload);
     default:
       return state;
   }
